@@ -23,11 +23,14 @@ Users can search for any city to view the current weather, temperature, humidity
 
 ---
 
-## 📸 Demo
+## 📸 Screenshots
 
-> 💻 Live Preview: [https://yourusername.github.io/weather-app](https://yourusername.github.io/weather-app)
+### ☀️ Light Mode
+![Light Mode](./screenshots/weather-app-main-page.png)
 
-> 📁 GitHub Repo: [https://github.com/yourusername/weather-app](https://github.com/yourusername/weather-app)
+### 🌙 Dark Mode
+![Dark Mode](./screenshots/weather-app-main-page-dark-mode.png)
+
 
 ---
 
@@ -43,6 +46,6 @@ Users can search for any city to view the current weather, temperature, humidity
 ## 📦 Setup Instructions (for local run)
 
 ```bash
-git clone https://github.com/yourusername/weather-app.git
+git clone https://github.com/kaizenarin/weather-app.git
 cd weather-app
 open index.html in your browser
