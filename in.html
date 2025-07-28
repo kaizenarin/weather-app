@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="shortcut icon" href="images.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+  <script src="js.js" defer ></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather App</h1>
+      <div class="icons">
+        <span title="Dark Mode" id="toggleMode"><img src="moon_4867890.png" width="30px" alt=""></span>
+      </div>
+    </header>
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button id="searchBtn">Search</button>
+    </div>
+    <div class="weather-card">
+      <div class="weather-main">
+        <img id="weatherIcon" src="" alt="Weather Icon" />
+        <h2 id="temp"></h2>
+        <p id="description"></p>
+      </div>
+      <div class="details">
+        <div><span class="icon">🌡️</span> Feels like: <span id="Feels"></span></div>
+        <div><span class="icon">💧</span> Humidity: <span id="Humidity"></span></div>
+        <div><span class="icon">🌬️</span> Wind: <span id="Wind"></span></div>
+        <div><span class="icon">💨</span> Gust: <span id="Gust"></span></div>
+      </div>
+      <div class="location">
+        <h3 id="city"></h3>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

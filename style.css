@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --bg-light: #73affd;
+  --bg-dark: #181f2a;
+  --card-light: linear-gradient(to bottom right, #b6e8f8, #73affd);
+  --card-dark: linear-gradient(to bottom right, #25364a, #4962a8);
+  --card-text-light: #333;
+  --card-text-dark: #f9fafb;
+  --primary: #3b6fa8;
+  --accent: #339af0;
+  --radius: 20px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-light);
+  color: var(--card-text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.4s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  margin: 2.5rem 0 1rem 0;
+}
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#toggleMode img {
+  width: 28px;
+  height: 28px;
+  
+}
+body.dark #toggleMode img {
+  filter: drop-shadow(0 2px 15px #21a1ff66);
+} 
+#toggleMode img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer; /* cursor bhi pointer ho jayega for click feel */
+}
+#toggleMode:hover img,
+#toggleMode:focus img {
+  transform: translateY(-5px) scale(1.1);  /* thoda upar aur bada */
+  filter: drop-shadow(0 4px 10px #339af080); /* soft blue shadow */
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+}
+
+/* -------- SEARCH & BUTTON -------- */
+.search-box {
+  width: 100%;
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--primary);
+  font-size: 1.05rem;
+  outline: none;
+  background: #f8fafc;
+  color: #262e36;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.3s, color 0.3s;
+}
+#cityInput:focus, #cityInput:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px #329bfd2a;
+}
+body.dark #cityInput {
+  background: #233155;
+  color: #e3e6eb;
+  border-color: var(--accent);
+}
+body.dark #cityInput:focus,
+body.dark #cityInput:hover {
+  border-color: #61c6ff;
+  box-shadow: 0 0 0 3px #30bcff2a;
+}
+
+/* -------- SEARCH BUTTON -------- */
+#searchBtn {
+  background: var(--primary);
+  color: #fff;
+  border: 1.5px solid transparent;
+  padding: 0 1.3rem;
+  border-radius: var(--radius);
+  font-size: 1.05rem;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 1px 3px #2221 0.05;
+  transition: filter 0.22s, background 0.23s, box-shadow 0.24s, border-color 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+#searchBtn:hover, #searchBtn:focus {
+  background: var(--accent);
+  filter: brightness(1.06);
+  border-color: var(--accent);
+  box-shadow: 0 4px 18px #69baff33;
+}
+#searchBtn img {
+  transition: filter 0.3s;
+}
+body.dark #searchBtn {
+  background: #23406a;
+  border: 1.5px solid #3288fa55;
+}
+body.dark #searchBtn:hover,
+body.dark #searchBtn:focus {
+  background: #275bb0;
+  border-color: #6fd1ff;
+}
+body.dark #searchBtn img {
+  filter: drop-shadow(0 0 10px #23e0fd80) brightness(1.2);
+}
+
+/* -------- WEATHER CARD -------- */
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--card-light);
+  color: var(--card-text-light);
+  padding: 2rem 2rem 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 320px;
+  transition: background 0.4s, color 0.3s;
+}
+
+/* Card Elements Centering & Space */
+#weatherIcon {
+  width: 75px;
+  margin-bottom: 0.6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.temp {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0.1rem 0 0.32rem 0;
+}
+#description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+  transition: color 0.3s;
+}
+#citw {
+  margin-bottom: 0.3rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  font-size: 1.03rem;
+  margin-bottom: 0.65rem;
+  justify-items: center;
+}
+.details .icon {
+  margin-right: 4px;
+}
+
+@media (max-width: 500px) {
+  .container, header {
+    width: 95vw;
+    min-width: unset;
+  }
+  .weather-card {
+    min-width: unset;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* -------- DARK MODE -------- */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--card-text-dark);
+}
+body.dark .weather-card {
+  background: var(--card-dark);
+  color: var(--card-text-dark);
+}
+body.dark #description {
+  color: #c5d3e6;
+}
